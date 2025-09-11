@@ -334,11 +334,17 @@
   $status = (empty($user)) ? "True" : "False";
   echo $status;
   echo "<br>";
-  
+
   //Null cosing operater
   echo $user = $color ?? "Anonymus";
   echo "<br>";
 
+  // -- Foeach --
+  $arrvalue=array(1,2,3,4,5,6,7,8,9,10);
+
+  foreach ($arrvalue as  $value) {
+    echo $value;
+  }
   ?>
 
 
