@@ -239,7 +239,7 @@
 
   define("Data", "It is constant using define ");
 
-  echo (Data); 
+  echo (Data);
   echo ("<br>");
 
 
@@ -261,7 +261,7 @@
   }
 
 
-  $checkdata = 2212;
+  $checkdata = 'dd';
 
   function checkmethod()
   {
@@ -271,9 +271,73 @@
   }
 
 
-//--- Operators in PHP ---
+  //-- DATE ---
+  $now = date("y-m-d");
+
+  echo $now;
+  echo "<br>";
 
 
+
+  //--- Operators in PHP ---
+
+  //1.Arithemetic Operator
+  //2.Assignment Operator
+  //3.Comparison Operator
+  //4.Increment/Decrement Operator
+  //5.Logical Operator
+  //6.String Operator
+  //7.Array Operator 
+  //8.Conditional Assignment Operator 
+
+
+  //--- Space Ship Operator ---
+  // X=2 <=> Y =2  
+  // -X Less Than Y   - Return - False
+  // Or Equal         - Return - True 
+  // Or X Greater than 0  - Return - True 
+
+
+  //6. String Operators 
+
+  $text1 = "Hello";
+  $text2 = "World ";
+  //concate -1 
+  $concat1 = $text1 . $text2;
+  echo $concat1;
+  echo "<br>";
+
+  //concate -2
+  $concat2 = $text1 .= $text2;
+  echo $concat2;
+  echo "<br>";
+
+  //7. Array Operators
+
+  //Array Concate
+  $arr1 = array(1, 2, 3, 4, 5);
+  $arr2 = array(6, 7, 8, 9, 10);
+
+  print_r(array_merge($arr1, $arr2));
+  echo "<br>";
+
+  //Array Equal 
+  var_dump($arr1 == $arr2);
+  echo "<br>";
+  //Array Identy 
+  var_dump($arr1 === $arr2);
+  echo "<br>";
+
+  //8.Conditional Assignment Operator 
+
+  //Ternary Operator
+  $status = (empty($user)) ? "True" : "False";
+  echo $status;
+  echo "<br>";
+  
+  //Null cosing operater
+  echo $user = $color ?? "Anonymus";
+  echo "<br>";
 
   ?>
 
