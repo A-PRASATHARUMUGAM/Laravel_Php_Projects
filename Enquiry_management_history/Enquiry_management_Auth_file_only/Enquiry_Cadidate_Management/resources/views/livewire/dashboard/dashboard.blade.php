@@ -27,7 +27,7 @@
     <!-- [Material Icons] https://fonts.google.com/icons -->
     <link rel="stylesheet" href="../assets/fonts/material.css"><!-- [Template CSS Files] -->
 
-    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="{{url('assets/css/style.css')}}" id="main-style-link">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
@@ -57,14 +57,15 @@
                     <!-- Navigation -->
                     <li class="pc-item pc-caption"><label>Navigation</label></li>
 
-                    <li class="pc-item"><a href="../dashboard/index.html" class="pc-link">
+                    <li class="pc-item">
+                        <a href="{{ route('home')}}" class="pc-link">
                         <span class="pc-micon"><i class="material-icons-two-tone">home</i> </span>
                         <span class="pc-mtext">Dashboard</span></a>
                     </li>
 
                     <!-- Enquiry   -->
                     <li class="pc-item">
-                        <a href="../enquiry/enquiry.html" class="pc-link d-flex align-items-center">
+                        <a href="{{ route('enquiry')}}" class="pc-link d-flex align-items-center">
                             <span class="pc-micon d-flex align-items-center justify-content-center">
                                 <i class="bi bi-card-checklist"></i>
                             </span>
@@ -86,7 +87,7 @@
           
             <!-- Logout   -->
                  <li class="pc-item " style="margin-top: 355px;">
-                <a href="#" class="pc-link d-flex align-items-center">
+                <a href="logout" class="pc-link d-flex align-items-center">
                     <span class="pc-micon d-flex align-items-center justify-content-center">
                       <i class="bi bi-box-arrow-left"></i>
                     </span>
@@ -212,9 +213,9 @@
                     <li class="dropdown pc-h-item header-user-profile"><a
                             class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
                             role="button" aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false"><img
-                                src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar"> <span
-                                class="ms-2"><span class="user-name">Prasath Arumugam</span> <span
-                                    class="user-desc">Administrator</span></span></a>
+                                src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar"> 
+                                <span class="ms-2"><span class="user-name">{{auth()->user()->name}}</span> 
+                                <span class="user-desc">Administrator</span></span></a>
                         <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
                             <div class="dropdown-header d-flex align-items-center justify-content-between">
                                 <h4 class="m-0">Profile</h4>
@@ -261,8 +262,6 @@
     </header><!-- [ Header ] end -->
     
     
-    
-    
     <!-- [ Main Content ] start -->
     <div class="pc-container">
 
@@ -288,6 +287,7 @@
                 </div>
             </div><!-- [ breadcrumb ] end -->
 
+                
             <!-- [ Main Content ] start -->
             <div class="row">
             
@@ -307,7 +307,7 @@
 
                                         <div class="col">
                                             <h6 class="m-b-5">Total Enquiry</h6>
-                                            <h3 class="m-b-0">1,783</h3>
+                                            <h3 class="m-b-0">1,783</h3> 
                                         </div>
                                             <!-- Icon -->
                                         <div class="col-auto">
@@ -379,7 +379,7 @@
 
                             <p class="fw-bold m-0  ">Enquiry Details</p>
 
-                        <a href="../enquiry/enquiry.html"><button type="button" class="btn btn-primary py-1">View All</button></a>
+                        <a href="{{ route('enquiry')}}"><button type="button" class="btn btn-primary py-1">View All</button></a>
 
                         </div>
                <!-- Enquiry Data start -->

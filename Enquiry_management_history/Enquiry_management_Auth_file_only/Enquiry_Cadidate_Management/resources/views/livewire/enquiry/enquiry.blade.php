@@ -4,7 +4,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Typography | Dashboardkit Dashboard Template</title>
+    <title>Enquire Management</title>
     <!-- [Meta] -->
     <meta name="keywords" content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard">
     <meta name="author" content="Codedthemes">
@@ -59,7 +59,7 @@
 
         <!-- Dashbaord  -->
         <li class="pc-item">
-          <a href="../dashboard/index.html" class="pc-link">
+          <a href="{{ route('home')}}" class="pc-link">
             <span class="pc-micon">
               <i class="material-icons-two-tone">home</i>
             </span>
@@ -70,7 +70,7 @@
 
           <!-- Enquiry -->
             <li class="pc-item">
-                <a href="../enquiry/enquiry.html" class="pc-link d-flex align-items-center">
+                <a href="{{ route('enquiry')}}" class="pc-link d-flex align-items-center">
                     <span class="pc-micon d-flex align-items-center justify-content-center">
                         <i class="bi bi-card-checklist"></i>
                     </span>
@@ -91,7 +91,7 @@
 
         <!-- Logout   -->
              <li class="pc-item " style="margin-top: 355px;">
-                <a href="#" class="pc-link d-flex align-items-center">
+                <a href="logout" class="pc-link d-flex align-items-center">
                     <span class="pc-micon d-flex align-items-center justify-content-center">
                       <i class="bi bi-box-arrow-left"></i>
                     </span>
@@ -271,7 +271,7 @@
       >
         <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar" />
         <span class="ms-2">
-          <span class="user-name">Prasath Arumugam</span>
+          <span class="user-name">{{auth()->user()->name}}</span>
           <span class="user-desc">Administrator</span>
         </span>
       </a>

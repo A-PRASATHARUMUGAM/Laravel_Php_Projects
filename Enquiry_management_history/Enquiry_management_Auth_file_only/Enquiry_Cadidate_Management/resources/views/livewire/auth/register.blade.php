@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+
+<head>
+  <title>Register | Dashboardkit Dashboard Template</title>
+  <!-- [Meta] -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description"
+    content="Dashboardkit is trending dashboard template made using Bootstrap 5 design framework. Dashboardkit is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies." />
+  <meta name="keywords"
+    content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard" />
+  <meta name="author" content="Codedthemes" />
+  <!-- [Favicon] icon -->
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon" />
+  <!-- [Google Font : Public Sans] icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700..700&display=swap" rel="stylesheet" />
+  <!-- [phosphor Icons] https://phosphoricons.com/ -->
+  <link rel="stylesheet" href="../assets/fonts/phosphor/duotone/style.css" />
+  <!-- [Tabler Icons] https://tablericons.com -->
+  <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" />
+  <!-- [Feather Icons] https://feathericons.com -->
+  <link rel="stylesheet" href="../assets/fonts/feather.css" />
+  <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+  <link rel="stylesheet" href="../assets/fonts/fontawesome.css" />
+  <!-- [Material Icons] https://fonts.google.com/icons -->
+  <link rel="stylesheet" href="../assets/fonts/material.css" />
+  <!-- [Template CSS Files] -->
+  <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" />
+</head><!-- [Head] end --><!-- [Body] Start -->
+
+<body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-header-theme="light" data-pc-sidebar-caption="true"
+  data-pc-direction="ltr" data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="pc-loader">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+  <div class="auth-main v1">
+    <div class="bg-overlay bg-primary"></div>
+
+    <div class="auth-wrapper">
+
+      <div class="auth-form">
+
+        <div class="card my-5">
+
+          <!-- From Staring Here  -->
+          
+          
+          <form action="/store" method="POST" class="card-body">
+
+        
+            <!-- Title  -->
+            <h2 class="mb-4 f-24 f-w-450">Enquiry Management </h2>
+
+ 
+            <h4 class="mb-3 f-w-400">Register</h4>
+
+            <!-- Username  -->
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i data-feather="user"></i>
+              </span>
+
+              <input type="text" class="form-control" name="name" placeholder="Username"  required  />
+             
+            </div>
+              {{-- Error messages --}}
+                  @if($errors->has('name'))
+                <span  class=" text-danger" >{{ $errors->first('name') }}</span>
+                     @endif
+
+            <!-- Email  -->
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i data-feather="mail"></i>
+              </span>
+              <input type="email" class="form-control" name="email" placeholder="Email address"  required/>
+            </div>
+            
+        {{-- Error messages --}}
+           @if($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+            @endif
+         
+
+            <!-- Password  -->
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i data-feather="lock"></i>
+              </span>
+              <input type="password" class="form-control" name="password" placeholder="Password" required />
+            </div>
+            
+        {{-- Error messages --}}
+               @if($errors->has('password'))
+                <span class="text-danger">{{ $errors->first('password') }}</span>
+                 @endif
+   
+
+            <!-- Confirm Password  -->
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i data-feather="lock"></i>
+              </span>
+              <input  type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required />
+            </div>
+
+            <!-- Register Button  -->
+           <button title="register-button" type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+            <p class="mb-2">
+              Already have an account?
+
+              
+              <a href="{{ route('login') }}" class="f-w-400">Login</a>
+            </p>
+            @csrf
+          </form>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- [ Main Content ] end --><!-- Required Js -->
+  <script src="../assets/js/plugins/popper.min.js"></script>
+  <script src="../assets/js/plugins/simplebar.min.js"></script>
+  <script src="../assets/js/plugins/bootstrap.min.js"></script>
+  <script src="../assets/js/fonts/custom-font.js"></script>
+  <script src="../assets/js/pcoded.js"></script>
+  <script src="../assets/js/plugins/feather.min.js"></script>
+</body>
+<!-- [Body] end -->
+
+</html>

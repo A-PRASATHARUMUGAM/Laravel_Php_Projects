@@ -54,13 +54,11 @@
 
                 <div class="card my-5">
                     <!-- Form Body  -->
-                    <form action="../dashboard/index.html" class="card-body">
-                        
+                    <form action="/authenticate"  method="POST" class="card-body">
+                            @csrf
                         <h2 class="mb-4 f-24 f-w-450">Enquiry Management </h2>
 
                         <h4 class="mb-3 f-25 f-w-400">Login</h4>
-
-
 
                         <!-- Email Id  -->
                         <div class="input-group mb-3"> 
@@ -69,9 +67,15 @@
                                 <i data-feather="user"></i> 
                             </span>
 
-                            <input type="text" class="form-control" placeholder="Username" required>
+                            <input type="text" class="form-control" name="email" placeholder="Email" >
                         
                         </div>
+                               
+                        {{-- Error messages --}}
+                        @if($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
+                        
 
                         <!-- Passwored  -->
                         <div class="input-group mb-4">
@@ -80,14 +84,21 @@
                             <i data-feather="lock"></i>
                                  </span>
 
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password"  placeholder="Password" >
                         
-                        </div>                  
+                        </div> 
+                            {{-- Error messages --}}
+                          @if($errors->has('password'))
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                         @endif       
+                         <div>
+                             <button  title="login_button" type="submit" class="btn btn-primary btn-block mb-4 ">Login</button>
+                            </div>       
                         
-                          <button  title="login_button" type="submit" class="btn btn-primary btn-block mb-4 ">Login</button>
 
-                        <p class="mb-2">Don’t have an account? <a href="register.html" class="f-w-400">Register</a></p>
-                    </form> 
+                        <p class="mb-2">Don’t have an account? <a href="{{ route('register') }}" class="f-w-400">Register</a></p>
+                    
+                    </form>
                 </div>
 
 
@@ -108,4 +119,4 @@
     <script src="../assets/js/plugins/feather.min.js"></script>
 </body><!-- [Body] end -->
 
-</html>
+</html> 
