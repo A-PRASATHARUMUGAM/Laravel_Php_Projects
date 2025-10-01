@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="assets/css/payment.css">
+  <title>Payment Option</title>
+</head>
+<body>
+
+<div class="main-container">
+  <h2>Select Payment Method</h2>
+
+  <label>
+    <input type="checkbox" id="cod"> Cash on Delivery
+  </label>
+
+  <label>
+    <input type="checkbox" id="online"> Online Payment
+  </label>
+
+  <div class="back-button">
+    <a href="./index.html">
+        <button type="button" class="btn btn-secondary">Back</button>
+    </a>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- COD Modal -->
+<div class="cod-modal" id="codModal">
+  <div class="cod-content">
+    <h3>Cash on Delivery</h3>
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Mobile Number">
+    <input type="email" placeholder="Email Address">
+    <textarea placeholder="Enter Your Address"></textarea>
+    <input type="text" placeholder="State">
+    <input type="text" placeholder="City">
+    <input type="text" placeholder="Pincode">
+    <input type="text" placeholder="Landmark">
+   <div class="cod-checkbox">
+    <input type="checkbox" id="cod-confirm">
+    <label for="cod-confirm">Cash on Delivery</label>
+  </div>
+    <button class="place-btn">Place Order</button>
+    <button class="cod-close" onclick="closeCOD()">Close</button>
+  </div>
+</div>
+
+<!-- Online Payment Modal -->
+<div class="scanner-modal" id="scannerModal">
+  <div class="scanner-content">
+    <h3>Scan to Pay via Google Pay</h3>
+    <img src="assets/images/qr_img/qr.jpg" alt="QR Code" />
+    <p>UPI ID: example@okaxis</p>
+    <button class="close-btn" onclick="closeScanner()">Close</button>
+  </div>
+</div>
+
+
+
+
+<script>
+  const codCheckbox = document.getElementById("cod");
+  const onlineCheckbox = document.getElementById("online");
+  const codModal = document.getElementById("codModal");
+  const scannerModal = document.getElementById("scannerModal");
+
+  codCheckbox.addEventListener("change", () => {
+    if (codCheckbox.checked) {
+      onlineCheckbox.checked = false;
+      codModal.style.display = "flex";
+    } else {
+      codModal.style.display = "none";
+    }
+  });
+
+  onlineCheckbox.addEventListener("change", () => {
+    if (onlineCheckbox.checked) {
+      codCheckbox.checked = false;
+      scannerModal.style.display = "flex";
+    } else {
+      scannerModal.style.display = "none";
+    }
+  });
+
+  function closeCOD() {
+    codModal.style.display = "none";
+    codCheckbox.checked = false;
+  }
+
+  function closeScanner() {
+    scannerModal.style.display = "none";
+    onlineCheckbox.checked = false;
+  }
+</script>
+
+</body>
+</html>
