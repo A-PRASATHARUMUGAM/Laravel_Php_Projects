@@ -3,53 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/payment.css">
   <title>Payment Option</title>
 </head>
 <body>
 
+
 <div class="main-container">
-  <h2>Select Payment Method</h2>
 
-  <label>
-    <input type="checkbox" id="cod"> Cash on Delivery
-  </label>
-
-  <label>
-    <input type="checkbox" id="online"> Online Payment
-  </label>
-
-  <div class="back-button">
-    <a href="./index.html">
-        <button type="button" class="btn btn-secondary">Back</button>
-    </a>
-
+  <div class="main-title-container">
+    <h3 class="main-title">Select Payment Method</h3>
   </div>
+
+<div class="payment-buttons d-flex gap-2">
+  <button type="button" id="codBtn" class="payment-btn">Cash on Delivery</button>
+  <button type="button" id="onlineBtn" class="payment-btn">Online Payment</button>
 </div>
 
+  <div class="back-button-container mt-2">
+    <a href="./index.html">
+      <button type="button" class="back-btn">Back</button>
+    </a>
+  </div>
 
+</div>
 
 
 
 <!-- COD Modal -->
 <div class="cod-modal" id="codModal">
-  <div class="cod-content">
+  <form class="cod-content">
+
     <h3>Cash on Delivery</h3>
-    <input type="text" placeholder="First Name">
+    <div>
+          <input type="text" placeholder="First Name">
+    </div>
+
+    <div>
     <input type="text" placeholder="Mobile Number">
-    <input type="email" placeholder="Email Address">
+    </div>
+
+    <div>
+      <input type="email" placeholder="Email Address">
+
+    </div>
+   
+    <div>
     <textarea placeholder="Enter Your Address"></textarea>
+    </div>
+    <div>
     <input type="text" placeholder="State">
-    <input type="text" placeholder="City">
+    </div>
+    <div>
+    <input type="text" placeholder="City">  
+    </div>
+    <div>
     <input type="text" placeholder="Pincode">
+    </div>
+    <div>
     <input type="text" placeholder="Landmark">
+    </div>
+
    <div class="cod-checkbox">
     <input type="checkbox" id="cod-confirm">
-    <label for="cod-confirm">Cash on Delivery</label>
+    <label for="cod-confirm" class="cod-confirm">Cash on Delivery</label>
   </div>
-    <button class="place-btn">Place Order</button>
-    <button class="cod-close" onclick="closeCOD()">Close</button>
-  </div>
+    <button type="submit" class="place-btn">Place Order</button>
+    <button type="button" class="cod-close" onclick="closeCOD()">Close</button>
+  </form>
 </div>
 
 <!-- Online Payment Modal -->
@@ -64,39 +86,31 @@
 
 
 
-
+<!-- Bootstarp -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<!-- Script -->
 <script>
-  const codCheckbox = document.getElementById("cod");
-  const onlineCheckbox = document.getElementById("online");
+  const codBtn = document.getElementById("codBtn");
+  const onlineBtn = document.getElementById("onlineBtn");
   const codModal = document.getElementById("codModal");
   const scannerModal = document.getElementById("scannerModal");
 
-  codCheckbox.addEventListener("change", () => {
-    if (codCheckbox.checked) {
-      onlineCheckbox.checked = false;
-      codModal.style.display = "flex";
-    } else {
-      codModal.style.display = "none";
-    }
+  codBtn.addEventListener("click", () => {
+    codModal.style.display = "flex";
+    scannerModal.style.display = "none";
   });
 
-  onlineCheckbox.addEventListener("change", () => {
-    if (onlineCheckbox.checked) {
-      codCheckbox.checked = false;
-      scannerModal.style.display = "flex";
-    } else {
-      scannerModal.style.display = "none";
-    }
+  onlineBtn.addEventListener("click", () => {
+    scannerModal.style.display = "flex";
+    codModal.style.display = "none";
   });
 
   function closeCOD() {
     codModal.style.display = "none";
-    codCheckbox.checked = false;
   }
 
   function closeScanner() {
     scannerModal.style.display = "none";
-    onlineCheckbox.checked = false;
   }
 </script>
 
