@@ -58,8 +58,6 @@
         <!-- Search Input Container  -->
         <div class="search-inputs-container">
 
-
-
             <div class="search-field-container">
             <!-- Search bar field -->
             <input title="searchbar"  type="search" class="search-input">
@@ -94,16 +92,21 @@
 
     <!-- Orders Table -->
     <div class="table-responsive">
-      <table class="table table-bordered align-middle text-center">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">Product</th>
+
+      <table class="table align-middle text-center">
+
+        <thead class="orders-table-header ">
+          <tr >
+            <th class="th-first" scope="col ">Product</th>
             <th scope="col">Price</th>
             <th scope="col">Payment</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
-        <tbody>
+        
+        <tbody class="orders-table-body ">
+
+
           <!-- Product Item 1 -->
           <tr>
             <!-- Product Details -->
@@ -135,15 +138,14 @@
             <!-- Actions -->
           <td>
         <div class="d-flex flex-column gap-1">
-            <button class="btn btn-sm btn-primary">Complete</button>
-            <button class="btn btn-sm btn-danger">Cancel</button>
-            <button class="btn btn-sm btn-secondary">Invoice</button>
+            <button  class="complete-btn btn-sm ">Complete</button>
+            <button  class="cancel-btn  btn-sm">Cancel Order</button>
+            <button  class="invoice-btn  btn-sm ">Invoice</button>
         </div>
         </td>
           </tr>
 
-
-          <!-- Product Item 2 -->
+    <!-- Product Item 2-->
           <tr>
             <!-- Product Details -->
             <td class="text-start">
@@ -151,7 +153,7 @@
               <small class="text-muted">Order ID: 32345 | Date: 3 OCT</small>
 
                 <div class="d-flex align-items-center mt-2">
-                <img src="assets/images/SKY68 k7.jpg" class="product-img me-2" alt="Product">
+                <img src="assets/images/Keyboard cable a5.jpg" class="product-img me-2" alt="Product">
                 <div>
                     <div>Keyboard</div>
                     <small>Qty: 1</small>
@@ -173,16 +175,15 @@
 
             <!-- Actions -->
           <td>
-            <div class="d-flex flex-column gap-1">
-                <button class="btn btn-sm btn-primary">Complete</button>
-                <button class="btn btn-sm btn-danger">Cancel</button>
-                <button class="btn btn-sm btn-secondary">Invoice</button>
-            </div>
+        <div class="d-flex flex-column gap-1">
+            <button  class="complete-btn btn-sm ">Complete</button>
+            <button  class="cancel-btn  btn-sm">Cancel Order</button>
+            <button  class="invoice-btn  btn-sm ">Invoice</button>
+        </div>
         </td>
-
           </tr>
 
-
+      
 
 
         </tbody>
