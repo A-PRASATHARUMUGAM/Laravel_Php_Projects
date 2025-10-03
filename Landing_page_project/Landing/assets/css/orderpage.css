@@ -8,12 +8,13 @@ a{
     text-decoration: none;
 }
 body{
-    /* background-image: url(../images/contactbg5.jpg); */
+    background-image: url(../images/contactbg5.jpg);
     background-size:cover;
     background-repeat:no-repeat ;
     background-position: center;
     background-attachment: fixed;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
 }
 /* header ************************************************* */
 
@@ -68,26 +69,82 @@ body{
  /* Main Container Start here*/
 
  .main-container{
-    padding: 10px ;
+    width: 100%;
     border: 1px solid yellow;
  }
+
+ /* Export Button  */
 .export-container{
-    border: 1px solid pink;
     text-align: end;
+    margin:10px 6px;
 }
- .search-bar-container{
-    padding: 10px ;
-    border: 1px solid red;
- }
+.export-btn{
 
- .search-input-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid green;
+    padding: 10px;
+    border-radius:6px;
+    border: none;    
+    font-size:0.8rem;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    
+}
+.export-btn:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease-in;
+}
 
 
- }
+/* Search Bar  */
+.search-bar-container {
+  margin: 10px;
+}
+
+.search-inputs-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid red;
+
+}
+
+.search-field-container {
+  display: flex;
+  border: 1px solid yellow;
+}
+
+/* Input */
+.search-input {
+  width: 40vw;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Button */
+.search-btn {
+  padding: 10px 16px;
+  margin-left: 6px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Sort orders */
+.sort-orders-container{
+    border: 1px solid yellow;
+}
+.sort-orders-container select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
 
  .orders-container{
     border: 1px solid blue;
@@ -216,6 +273,15 @@ ul{
             \* **************************** */
                     
 @media (max-width:475px){
+    .search-inputs-container{
+
+        flex-direction: column;
+    }
+.search-input{
+
+}
+
+
 }    
             /* **************************** *\
                     #MEDIA  MAX-360PX 
@@ -223,4 +289,3 @@ ul{
 
 @media (max-width:360px){
 }
-

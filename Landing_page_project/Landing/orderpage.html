@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/orderpage.css" type="text/css">
+
+    <!-- bootstrap -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
        <!-- js*************************** -->
        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
        <!-- js*************************** -->
@@ -35,52 +38,52 @@
 
    </div> 
   
-
-
-
-
 <!-- Main Container Start-->
 <div class="main-container">
 
 <!-- Export -->
        <div class="export-container">
-            <button title="exportbtn" class="export-btn" >Export</button>
+
+            <button title="exportbtn" class="export-btn" >   
+                <i class="bi bi-file-earmark-arrow-down fw-bold"></i>
+                Export Order List 
+            </button>
         </div>
 
     <!-- Search Bar Container-->
     <div class="search-bar-container">
     
         <!-- Search Input Container  -->
-        <div class="search-input-container">
+        <div class="search-inputs-container">
 
 
+
+            <div class="search-field-container">
             <!-- Search bar field -->
-                <input title="searchbar"  type="search">
+            <input title="searchbar"  type="search" class="search-input">
 
-         <!--Search bar button  -->
+            <!--Search bar button  -->
                 <div>
                     <button title="searchbtn" class="search-btn">Search now</button>
                 </div>
 
+            </div>
 
             <!-- Sort orders  -->
-                <div class="sort-orders-button">
+                <div class="sort-orders-container">
 
-                <select title="Sort Order by Name, Price, Date" name="" id="">
-                        <option value="name">Name</option>
-                        <option value="price">Price</option>
-                        <option value="date">Date</option>
-                </select>
+                    <label for="">Sort By: </label>
+                    
+                    <select title="Sort Order by Name, Price, Date" name="" id="" >
+                            <option value="name">Name</option>
+                            <option value="price">Price</option>
+                            <option value="date">Date</option>
+                    </select>
 
-                
                 </div>
                 
-            
-            
-
-    </div>
+        </div>
            
-
     </div>
 
 
